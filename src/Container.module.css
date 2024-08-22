@@ -1,0 +1,141 @@
+/* Container */
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Heading */
+.container .heading {
+    color: #182C62;
+    font-size: 24px;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table Styles */
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #4B5C68;
+    font-size: 12px;
+}
+
+.container th {
+    background-color: #E4EDF2;
+    height: 40px;
+}
+
+/* Table Body */
+.container tbody tr {
+    border-bottom: 1px solid #E4EDF2;
+}
+
+.container tbody tr:nth-child(even) {
+    background-color: #F6F7F7;
+}
+
+.container tbody tr:last-child {
+    border-bottom: 0;
+}
+
+/* Team Cells */
+.container .team,
+.container .homeTeam,
+.container .awayTeam {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.container .team,
+.container .awayTeam {
+    justify-content: flex-start;
+}
+
+.container .headHomeTeam {
+    text-align: right;
+}
+
+.container .headAwayTeam {
+    text-align: left;
+}
+
+.container .team {
+    margin-left: 20px;
+}
+
+/* Image Styles */
+.container tbody img {
+    height: 37px;
+    width: 53px;
+}
+
+/* Table Data Cells */
+.container td {
+    font-size: 14px;
+    height: 70px;
+    text-align: center;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container td strong {
+    font-size: 16px;
+}
+
+.container td .points {
+    color: #025FEB;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Loading */
+.loading {
+    color: #ccc;
+    font-size: 16px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Error */
+.error {
+    color: red;
+    font-size: 16px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 750px) {
+
+    .tableSchedule th:nth-child(2),
+    .tableSchedule td:nth-child(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .tableSchedule th:nth-child(1),
+    .tableSchedule td:nth-child(1),
+    .tableSchedule th:nth-child(2),
+    .tableSchedule td:nth-child(2),
+    .tableLeaderboard th:nth-child(3),
+    .tableLeaderboard td:nth-child(3),
+    .tableLeaderboard th:nth-child(4),
+    .tableLeaderboard td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+
+    .tableLeaderboard th:nth-child(5),
+    .tableLeaderboard td:nth-child(5) {
+        display: none;
+    }
+}
