@@ -13,12 +13,13 @@
     text-align: center;
 }
 
-/* Table Styles */
+/* Table */
 .container table {
     width: 100%;
     border-collapse: collapse;
     color: #4B5C68;
     font-size: 12px;
+    text-align: center;
     margin-bottom: 60px;
 }
 
@@ -50,7 +51,6 @@
     justify-content: flex-end;
 }
 
-.container .team,
 .container .awayTeam {
     justify-content: flex-start;
 }
@@ -64,10 +64,25 @@
 }
 
 .container .team {
+    justify-content: flex-start;
     margin-left: 20px;
 }
 
-/* Image Styles */
+.container .dateTime {
+    text-align: right;
+}
+
+.container .stadium {
+    padding-left: 40px;
+    text-align: left;
+}
+
+.container .teamName {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Flag images */
 .container tbody img {
     height: 37px;
     width: 53px;
@@ -77,9 +92,8 @@
 .container td {
     font-size: 14px;
     height: 70px;
-    text-align: center;
+
     font-size: 14px;
-    text-align: center;
     vertical-align: middle;
 }
 

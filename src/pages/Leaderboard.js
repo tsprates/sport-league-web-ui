@@ -47,7 +47,7 @@ function Schedule() {
             <table className={style.tableLeaderboard}>
                 <thead>
                     <tr>
-                        <th>Team Name</th>
+                        <th className={style.teamName}>Team Name</th>
                         <th>MP</th>
                         <th>GF</th>
                         <th>GA</th>
@@ -68,7 +68,7 @@ function Schedule() {
                             <td>{t.goalsFor}</td>
                             <td>{t.goalsAgainst}</td>
                             <td>{t.goalsFor - t.goalsAgainst}</td>
-                            <td><span class={style.points}>{t.points}</span></td>
+                            <td><span className={style.points}>{t.points}</span></td>
                         </tr>
                     ))}
                 </tbody>

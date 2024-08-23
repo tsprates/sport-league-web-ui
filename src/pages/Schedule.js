@@ -48,8 +48,8 @@ function Schedule() {
             <table className={style.tableSchedule}>
                 <thead>
                     <tr>
-                        <th>Date/Time</th>
-                        <th>Stadium</th>
+                        <th className={style.dateTime}>Date/Time</th>
+                        <th className={style.stadium}>Stadium</th>
                         <th className={style.headHomeTeam}>Home Team</th>
                         <th></th>
                         <th className={style.headAwayTeam}>Away Team</th>
@@ -58,8 +58,8 @@ function Schedule() {
                 <tbody>
                     {matches && matches.map((m) => (
                         <tr key={m.homeTeam + '_' + m.awayTeam}>
-                            <td>{moment(m.matchDate).add(5, 'hours').format('D.M.YYYY hh:mm')}</td>
-                            <td>{m.stadium}</td>
+                            <td className={style.dateTime}><span>{moment(m.matchDate).add(5, 'hours').format("D.M.YYYY")}<br />{moment(m.matchDate).add(5, 'hours').format("hh:mm")}</span></td>
+                            <td className={style.stadium}>{m.stadium}</td>
                             <td>
                                 <div className={style.homeTeam}>
                                     <strong>{m.homeTeam}</strong>
