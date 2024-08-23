@@ -29,14 +29,8 @@ function Schedule() {
         } catch (error) {
             console.error('Error fetching matches: ', error);
             setError('Failed to load matches');
-        } finally {
-            setLoading(false);
         }
     }, []);
-
-    if (loading) {
-        return <p className={style.loading}>Loading...</p>;
-    }
 
     if (error) {
         return <p className={style.error}>{error}</p>;
@@ -56,6 +50,13 @@ function Schedule() {
                     </tr>
                 </thead>
                 <tbody>
+                    {loading && (
+                        <tr>
+                            <td colSpan={5}>
+                                <div className={style.loading}><div></div><div></div><div></div><div></div></div>
+                            </td>
+                        </tr>
+                    )}
                     {matches && matches.map((m) => (
                         <tr key={m.homeTeam + '_' + m.awayTeam}>
                             <td className={style.dateTime}><span>{moment(m.matchDate).add(5, 'hours').format("D.M.YYYY")}<br />{moment(m.matchDate).add(5, 'hours').format("hh:mm")}</span></td>

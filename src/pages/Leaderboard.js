@@ -5,7 +5,7 @@ import style from "../css/Container.module.css";
 
 function Schedule() {
     const [leaderboard, setLeaderboard] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -28,14 +28,8 @@ function Schedule() {
         } catch (error) {
             console.error('Error fetching matches: ', error);
             setError('Failed to load matches');
-        } finally {
-            setLoading(false);
         }
     }, []);
-
-    if (loading) {
-        return <p className={style.loading}>Loading...</p>;
-    }
 
     if (error) {
         return <p className={style.error}>{error}</p>;
@@ -56,6 +50,13 @@ function Schedule() {
                     </tr>
                 </thead>
                 <tbody>
+                    {loading && (
+                        <tr>
+                            <td colSpan={5}>
+                                <div className={style.loading}><div></div><div></div><div></div><div></div></div>
+                            </td>
+                        </tr>
+                    )}
                     {leaderboard && leaderboard.map((t) => (
                         <tr key={t.teamName}>
                             <td>
