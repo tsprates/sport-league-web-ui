@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import style from "../Container.module.css";
+import { getUrlFlag } from "../utils.js";
 import LeagueService from "../services/LeagueService.js";
+import style from "../css/Container.module.css";
 
 function Schedule() {
     const [leaderboard, setLeaderboard] = useState(null);
@@ -31,8 +32,6 @@ function Schedule() {
             setLoading(false);
         }
     }, []);
-
-    const getUrlFlag = (country) => `https://flagsapi.codeaid.io/${country}.png`;
 
     if (loading) {
         return <p className={style.loading}>Loading...</p>;

@@ -1,0 +1,1 @@
+export const getUrlFlag = (country) => `https://flagsapi.codeaid.io/${country}.png`;

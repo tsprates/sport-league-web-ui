@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import style from "../Container.module.css";
-import moment from "moment";
+import style from "../css/Container.module.css";
+import { getUrlFlag } from "../utils.js";
 import LeagueService from "../services/LeagueService.js";
+import moment from "moment";
 
 function Schedule() {
     const [matches, setMatches] = useState(null);
@@ -32,8 +33,6 @@ function Schedule() {
             setLoading(false);
         }
     }, []);
-
-    const getUrlFlag = (country) => `https://flagsapi.codeaid.io/${country}.png`;
 
     if (loading) {
         return <p className={style.loading}>Loading...</p>;

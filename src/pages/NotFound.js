@@ -1,4 +1,4 @@
-import style from '../NotFound.module.css'
+import style from '../css/NotFound.module.css'
 
 
 function NoFound() {
